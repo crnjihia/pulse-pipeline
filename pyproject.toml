@@ -1,0 +1,43 @@
+[project]
+name = "hali-pipeline"
+version = "0.1.0"
+description = "Automated ETL pipeline for Kenyan public data"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Your Name", email = "you@example.com"}]
+
+dependencies = [
+    "pandas>=2.0",
+    "sqlalchemy>=2.0",
+    "psycopg2-binary>=2.9",
+    "apscheduler>=3.10",
+    "structlog>=24.0",
+    "pydantic-settings>=2.0",
+    "tenacity>=9.0",
+    "streamlit>=1.30",
+    "plotly>=5.0",
+    "requests>=2.28",
+]
+
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+ignore = ["BLE001"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+check_untyped_defs = true
+warn_redundant_casts = true
+warn_unused_ignores = false
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+check_untyped_defs = true
+
+[tool.pytest.ini_options]
+addopts = "--cov=etl --cov=db --cov=dashboard --cov=cli"
