@@ -1,0 +1,4 @@
+currency,buying,selling,mean,rate_date
+USD,100,101,100.5,2023-01-01
+EUR,110,111,110.5,2023-01-01
+GBP,130,131,130.5,2023-01-01

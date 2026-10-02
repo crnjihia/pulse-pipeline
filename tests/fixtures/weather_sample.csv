@@ -1,0 +1,3 @@
+station,observed_at,temp_c,rainfall_mm,humidity_pct
+StationA,2023-01-01T00:00:00Z,25.0,0.0,80
+StationB,2023-01-01T01:00:00Z,27.5,0.5,78
