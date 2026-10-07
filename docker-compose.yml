@@ -4,25 +4,25 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: hali
+      POSTGRES_DB: pulse
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d hali"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d pulse"]
       interval: 5s
       timeout: 5s
       retries: 5
 
   scheduler:
     build: .
-    command: python -m hali schedule
+    command: python -m pulse schedule
     depends_on:
       postgres:
         condition: service_healthy
     environment:
-      - DATABASE_URL=postgresql+psycopg2://postgres:postgres@postgres:5432/hali
+      - DATABASE_URL=postgresql+psycopg2://postgres:postgres@postgres:5432/pulse
     volumes:
       - .:/app
 
@@ -33,7 +33,7 @@ services:
       postgres:
         condition: service_healthy
     environment:
-      - DATABASE_URL=postgresql+psycopg2://postgres:postgres@postgres:5432/hali
+      - DATABASE_URL=postgresql+psycopg2://postgres:postgres@postgres:5432/pulse
     ports:
       - "8501:8501"
     volumes:

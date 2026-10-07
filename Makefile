@@ -4,10 +4,10 @@
 run: run-once
 
 run-once:
-	python -m hali run --pipeline all
+	python -m pulse run --pipeline all
 
 schedule:
-	python -m hali schedule
+	python -m pulse schedule
 
 dashboard:
 	streamlit run dashboard/app.py

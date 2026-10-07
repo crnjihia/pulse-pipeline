@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 8501
 
 # Default command (can be overridden)
-CMD ["python", "-m", "hali", "run", "--pipeline", "all"]
+CMD ["python", "-m", "pulse", "run", "--pipeline", "all"]
