@@ -97,7 +97,7 @@ def _send_failure_webhook(pipeline_name: str, run_id: int, error_msg: str, durat
         return
     try:
         payload: Any = {
-            "text": f"🚨 Hali Pipeline Alert: *{pipeline_name}* run #{run_id} failed after {duration_sec:.1f}s!\nError: {error_msg}",
+            "text": f"🚨 Pulse Pipeline Alert: *{pipeline_name}* run #{run_id} failed after {duration_sec:.1f}s!\nError: {error_msg}",
             "pipeline": pipeline_name,
             "run_id": run_id,
             "status": "failed",

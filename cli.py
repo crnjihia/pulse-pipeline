@@ -14,7 +14,7 @@ logger = structlog.get_logger(__name__)
 
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(
-        description="Hali Pipeline – Automated ETL for Kenyan Public Data"
+        description="Pulse Pipeline – Automated ETL for Kenyan Public Data"
     )
     subparsers = parser.add_subparsers(dest="command")
 
