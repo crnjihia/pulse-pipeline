@@ -1,7 +1,7 @@
 # 🇰🇪 Pulse Pipeline — Kenyan Public Data ETL & Analytics
 
-[![CI](https://github.com/yourorg/pulse-pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/yourorg/pulse-pipeline/actions)
-[![Coverage](https://img.shields.io/badge/coverage-93%25-brightgreen)](https://github.com/yourorg/pulse-pipeline)
+[![CI](https://github.com/crnjihia/pulse-pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/crnjihia/pulse-pipeline/actions)
+[![Coverage](https://img.shields.io/badge/coverage-93%25-brightgreen)](https://github.com/crnjihia/pulse-pipeline)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue?logo=python)](https://www.python.org/downloads/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue?logo=postgresql)](https://www.postgresql.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.30%2B-FF4B4B?logo=streamlit)](https://streamlit.io/)
@@ -229,7 +229,7 @@ Data quality check assertion ledger.
 #### On Windows (PowerShell):
 ```powershell
 # Clone the repository
-git clone https://github.com/yourorg/pulse-pipeline.git
+git clone https://github.com/crnjihia/pulse-pipeline.git
 cd pulse-pipeline
 
 # Create and activate virtual environment
@@ -243,7 +243,7 @@ pip install -r requirements.txt
 #### On Linux / macOS:
 ```bash
 # Clone the repository
-git clone https://github.com/yourorg/pulse-pipeline.git
+git clone https://github.com/crnjihia/pulse-pipeline.git
 cd pulse-pipeline
 
 # Create and activate virtual environment
