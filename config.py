@@ -6,9 +6,9 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     """Application-wide settings."""
 
-    DATABASE_URL: str = "postgresql+psycopg2://postgres:postgres@localhost:5432/hali"
+    DATABASE_URL: str = "postgresql+psycopg2://postgres:postgres@localhost:5432/pulse"
     WEBHOOK_URL: str | None = None
-    USER_AGENT: str = "HaliPipeline/1.0 (+https://github.com/yourorg/hali-pipeline)"
+    USER_AGENT: str = "PulsePipeline/1.0 (+https://github.com/yourorg/pulse-pipeline)"
 
     model_config = SettingsConfigDict(
         env_file=".env",

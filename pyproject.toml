@@ -1,5 +1,5 @@
 [project]
-name = "hali-pipeline"
+name = "pulse-pipeline"
 version = "0.1.0"
 description = "Automated ETL pipeline for Kenyan public data"
 readme = "README.md"
@@ -40,4 +40,4 @@ disallow_untyped_defs = false
 check_untyped_defs = true
 
 [tool.pytest.ini_options]
-addopts = "--cov=etl --cov=db --cov=dashboard --cov=cli"
+addopts = "--cov=etl --cov=db --cov=dashboard --cov=cli --cov=scheduler --cov=config"
