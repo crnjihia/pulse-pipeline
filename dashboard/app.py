@@ -11,7 +11,7 @@ import streamlit as st
 from db.session import get_engine
 
 st.set_page_config(
-    page_title="Hali Pipeline Dashboard",
+    page_title="Pulse Pipeline Dashboard",
     page_icon="🇰🇪",
     layout="wide",
 )
@@ -60,7 +60,7 @@ def get_recent_runs() -> pd.DataFrame:
 # -------------------------------------------------
 # Header & Data Freshness
 # -------------------------------------------------
-st.title("🇰🇪 Hali Pipeline — Kenyan Public Data ETL")
+st.title("🇰🇪 Pulse Pipeline — Kenyan Public Data ETL")
 
 recent_runs = get_recent_runs()
 if not recent_runs.empty:
@@ -102,7 +102,7 @@ with tab_weather:
     df_weather = load_table("weather_observations")
 
     if df_weather.empty:
-        st.info("No weather data found in database. Run `python -m hali run --pipeline weather` to ingest data.")
+        st.info("No weather data found in database. Run `python -m pulse run --pipeline weather` to ingest data.")
     else:
         df_weather["observed_at"] = pd.to_datetime(df_weather["observed_at"], utc=True)
         stations = sorted(df_weather["station"].dropna().unique().tolist())
@@ -143,7 +143,7 @@ with tab_nse:
     df_nse = load_table("nse_prices")
 
     if df_nse.empty:
-        st.info("No NSE stock data found. Run `python -m hali run --pipeline nse` to ingest data.")
+        st.info("No NSE stock data found. Run `python -m pulse run --pipeline nse` to ingest data.")
     else:
         df_nse["trading_date"] = pd.to_datetime(df_nse["trading_date"], utc=True)
         tickers = sorted(df_nse["ticker"].dropna().unique().tolist())
@@ -222,7 +222,7 @@ with tab_forex:
     df_cbk = load_table("cbk_rates")
 
     if df_cbk.empty:
-        st.info("No forex rates found. Run `python -m hali run --pipeline cbk` to ingest data.")
+        st.info("No forex rates found. Run `python -m pulse run --pipeline cbk` to ingest data.")
     else:
         df_cbk["rate_date"] = pd.to_datetime(df_cbk["rate_date"], utc=True)
         all_currencies = sorted(df_cbk["currency"].dropna().unique().tolist())
