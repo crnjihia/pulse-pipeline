@@ -1,0 +1,75 @@
+site_name: Pulse Pipeline
+site_description: Production-grade ETL & analytics platform for Kenyan public datasets (Kenya Met, NSE, CBK).
+site_author: crnjihia
+site_url: https://crnjihia.github.io/pulse-pipeline/
+repo_name: crnjihia/pulse-pipeline
+repo_url: https://github.com/crnjihia/pulse-pipeline
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  palette:
+    # Palette toggle for automatic/light/dark mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - Data Pipelines:
+      - Overview: pipelines/index.md
+      - Kenya Met Weather: pipelines/weather.md
+      - NSE Equities: pipelines/nse.md
+      - CBK Forex Rates: pipelines/cbk.md
+  - Data Quality: quality.md
+  - Analytics Dashboard: dashboard.md
+  - CLI & Scheduler: cli.md
+  - Deployment & GHCR: deployment.md
+  - Releases & Changelog:
+      - Release Strategy: releases.md
+      - Changelog: changelog.md

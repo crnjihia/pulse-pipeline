@@ -1,6 +1,9 @@
 # 🇰🇪 Pulse Pipeline — Kenyan Public Data ETL & Analytics
 
 [![CI](https://github.com/crnjihia/pulse-pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/crnjihia/pulse-pipeline/actions)
+[![GHCR Docker Package](https://img.shields.io/badge/GHCR-Docker%20Package-blue?logo=docker)](https://github.com/crnjihia/pulse-pipeline/pkgs/container/pulse-pipeline)
+[![Documentation](https://img.shields.io/badge/Docs-GitHub%20Pages-brightgreen?logo=github)](https://crnjihia.github.io/pulse-pipeline/)
+[![Release](https://img.shields.io/github/v/release/crnjihia/pulse-pipeline?logo=github&color=orange)](https://github.com/crnjihia/pulse-pipeline/releases)
 [![Coverage](https://img.shields.io/badge/coverage-93%25-brightgreen)](https://github.com/crnjihia/pulse-pipeline)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue?logo=python)](https://www.python.org/downloads/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue?logo=postgresql)](https://www.postgresql.org/)
@@ -8,6 +11,7 @@
 [![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![Checked with mypy](https://img.shields.io/badge/mypy-checked-blue)](https://mypy-lang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 
 > **Pulse Pipeline** is an automated, production-grade ETL system and real-time observability platform that ingests, cleans, validates, and serves key Kenyan public datasets:
 > - **Kenya Meteorological Department**: Observational weather telemetry (temperature, rainfall, humidity, IQR statistical outliers).
@@ -327,13 +331,34 @@ docker compose up --build -d
 - **PostgreSQL 16:** `localhost:5432` (database: `pulse`)
 - **Scheduler Daemon:** Runs as an isolated container in the background
 
-To view logs or tear down:
+### Official GitHub Container Registry (GHCR) Package
+
+Pull the published container image directly from GHCR:
+
 ```bash
-docker compose logs -f
-docker compose down
+# Pull the latest image
+docker pull ghcr.io/crnjihia/pulse-pipeline:latest
+
+# Run one-off pipeline ingestion
+docker run --rm ghcr.io/crnjihia/pulse-pipeline:latest python -m pulse run --pipeline all
 ```
 
 ---
+
+## 📚 Documentation Site (GitHub Pages)
+
+Full project documentation is hosted on GitHub Pages: **[https://crnjihia.github.io/pulse-pipeline/](https://crnjihia.github.io/pulse-pipeline/)**
+
+Key sections:
+- 🏛️ **[Architecture & Design](https://crnjihia.github.io/pulse-pipeline/architecture/)**
+- 🌦️ **[Kenya Met Weather Pipeline & Outlier Detection](https://crnjihia.github.io/pulse-pipeline/pipelines/weather/)**
+- 📈 **[NSE Equities Pipeline & OHLCV Normalization](https://crnjihia.github.io/pulse-pipeline/pipelines/nse/)**
+- 💱 **[CBK Forex Pipeline & Official Spreads](https://crnjihia.github.io/pulse-pipeline/pipelines/cbk/)**
+- 🩺 **[Data Quality Gates & Ledgers](https://crnjihia.github.io/pulse-pipeline/quality/)**
+- 🚀 **[Deployment, GHCR & Releases](https://crnjihia.github.io/pulse-pipeline/deployment/)**
+
+---
+
 
 ## 🧪 Testing & Code Quality
 
